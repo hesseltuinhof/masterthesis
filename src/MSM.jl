@@ -44,9 +44,9 @@ using Distributions
 
 function MSM(num_sim, sim_length, m0, kbar, sigma, gamma_kbar, b)
 	m1 = 2-m0
-    gammaone = 1 - exp(log(1-gamma_kbar)/(b^(kbar-1)))
-    gamma  = zeros(kbar)
-    for i = 1:kbar
+	gammaone = 1 - exp(log(1-gamma_kbar)/(b^(kbar-1)))
+	gamma  = zeros(kbar)
+	for i = 1:kbar
 		gamma[i] = 1-(1-gammaone)^(b^(i-1))
 	end
 	markovstatevector = zeros(kbar)
